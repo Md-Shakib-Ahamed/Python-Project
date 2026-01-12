@@ -1,0 +1,19 @@
+import sys
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtWebEngineWidgets import *
+
+class Browser(QWidget):
+    def __init__(self):
+        super(Browser, self).__init__()
+        self.browser = QWebEngineView()
+        self.browser.setUrl(QUrl("https://www.google.com"))
+
+        layout = QVBoxLayout(self)
+        layout.addWidget(self.browser)
+
+app = QApplication(sys.argv)
+window = Browser()
+window.show()
+app.exec_()
